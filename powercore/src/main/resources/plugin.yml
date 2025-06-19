@@ -1,0 +1,31 @@
+name: PowerCore
+version: 1.0.0
+main: me.powercore.PowerCore
+api-version: 1.21
+commands:
+  pvp:
+    description: Enable or disable PvP globally.
+    usage: /pvp <enable|disable>
+    permission: powercore.pvp.toggle
+    permission-message: You don't have permission to toggle PvP.
+  withdraw:
+    description: Withdraw hearts as items.
+    usage: /withdraw <amount>
+    permission: powercore.withdraw
+    permission-message: You don't have permission to withdraw hearts.
+  revive:
+    description: Revive a player.
+    usage: /revive <player>
+    permission: powercore.revive
+    permission-message: You don't have permission to revive players.
+permissions:
+  powercore.pvp.toggle:
+    description: Allows toggling PvP.
+    default: op
+  powercore.withdraw:
+    description: Allows withdrawing hearts.
+    default: true
+  powercore.revive:
+    description: Allows reviving players.
+    default: op
+

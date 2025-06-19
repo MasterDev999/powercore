@@ -1,0 +1,21 @@
+lifesteal:
+  enabled: true
+  hearts_stolen: 1.0
+  min_health: 2.0
+  max_health: 40.0
+  default_max_health: 20.0
+  on_death_message: "&c{killer} stole a heart from {victim}!"
+
+pvp:
+  enabled: true
+  toggle_message_enabled: "&aPvP is now enabled."
+  toggle_message_disabled: "&cPvP is now disabled."
+
+withdraw:
+  max_withdraw_amount: 10
+
+revive:
+  enabled: true
+  revive_item: NETHER_STAR
+  revive_amount: 1
+  cooldown_seconds: 3600
