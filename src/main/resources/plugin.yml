@@ -2,6 +2,7 @@ name: PowerCore
 version: 1.0.0
 main: me.powercore.PowerCore
 api-version: 1.21
+
 commands:
   pvp:
     description: Enable or disable PvP globally.
@@ -14,10 +15,16 @@ commands:
     permission: powercore.withdraw
     permission-message: You don't have permission to withdraw hearts.
   revive:
-    description: Revive a player.
+    description: Revive a banned player.
     usage: /revive <player>
     permission: powercore.revive
     permission-message: You don't have permission to revive players.
+  recipe:
+    description: Show custom crafting recipes.
+    usage: /recipe <heart|revive>
+    permission: powercore.recipe
+    permission-message: You don't have permission to view recipes.
+
 permissions:
   powercore.pvp.toggle:
     description: Allows toggling PvP.
@@ -26,6 +33,8 @@ permissions:
     description: Allows withdrawing hearts.
     default: true
   powercore.revive:
-    description: Allows reviving players.
+    description: Allows reviving banned players.
     default: op
-
+  powercore.recipe:
+    description: Allows viewing custom recipes.
+    default: op
