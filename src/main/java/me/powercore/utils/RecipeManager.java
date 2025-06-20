@@ -117,9 +117,9 @@ public class RecipeManager {
                 if (c == ' ') {
                     sb.append(ChatColor.GRAY).append("[ ] ");
                 } else {
-                    Material mat = recipe.getIngredientMap().get(c);
-                    if (mat != null) {
-                        sb.append(ChatColor.GREEN).append("[").append(mat.name()).append("] ");
+                    ItemStack item = recipe.getIngredientMap().get(c);
+                    if (item != null) {
+                        sb.append(ChatColor.GREEN).append("[").append(item.getType().name()).append("] ");
                     } else {
                         sb.append(ChatColor.RED).append("[?] ");
                     }
