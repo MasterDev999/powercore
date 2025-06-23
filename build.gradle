@@ -2,29 +2,29 @@ plugins {
     id 'java'
 }
 
-group 'me.powercore'
-version '1.1.0'
+group = 'me.powercore'
+version = '1.1.0'
 
 repositories {
     mavenCentral()
+    maven { url = 'https://repo.papermc.io/repository/maven-public/' }
 }
 
 dependencies {
-    compileOnly 'org.bukkit:bukkit:1.21.1' // Adjust the version as necessary
+    compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
 }
 
-tasks.withType(JavaCompile) {
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8'
 }
 
 jar {
-    manifest {
-        attributes(
-            'Main-Class': 'me.powercore.PowerCore',
-            'Version': version
-        )
-    }
+    archiveBaseName.set('PowerCore')
+    archiveVersion.set(version)
 }
-
-sourceCompatibility = '1.8'
-targetCompatibility = '1.8'
