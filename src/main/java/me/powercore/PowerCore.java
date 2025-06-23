@@ -50,3 +50,5 @@ public class PowerCore extends JavaPlugin {
     private void registerListeners() {
         getServer().getPluginManager().registerEvents(new LifestealListener(), this);
         getServer().getPluginManager().registerEvents(new PlayerJoinListener(), this);
+    }
+}
