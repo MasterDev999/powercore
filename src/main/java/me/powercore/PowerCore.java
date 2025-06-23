@@ -1,6 +1,12 @@
 package me.powercore;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import me.powercore.commands.PvpCommand;
+import me.powercore.commands.RecipeCommand;
+import me.powercore.commands.ReviveCommand;
+import me.powercore.commands.WithdrawCommand;
+import me.powercore.listeners.LifestealListener;
+import me.powercore.listeners.PlayerJoinListener;
 
 public class PowerCore extends JavaPlugin {
 
@@ -19,16 +25,14 @@ public class PowerCore extends JavaPlugin {
     }
 
     private void registerCommands() {
-        // Register commands here
-        getCommand("pvp").setExecutor(new commands.PvpCommand());
-        getCommand("recipe").setExecutor(new commands.RecipeCommand());
-        getCommand("revive").setExecutor(new commands.ReviveCommand());
-        getCommand("withdraw").setExecutor(new commands.WithdrawCommand());
+        getCommand("pvp").setExecutor(new PvpCommand(this));
+        getCommand("recipe").setExecutor(new RecipeCommand(this));
+        getCommand("revive").setExecutor(new ReviveCommand(this));
+        getCommand("withdraw").setExecutor(new WithdrawCommand(this));
     }
 
     private void registerListeners() {
-        // Register event listeners here
-        getServer().getPluginManager().registerEvents(new listeners.LifestealListener(), this);
-        getServer().getPluginManager().registerEvents(new listeners.PlayerJoinListener(), this);
+        getServer().getPluginManager().registerEvents(new LifestealListener(this), this);
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this), this);
     }
 }
