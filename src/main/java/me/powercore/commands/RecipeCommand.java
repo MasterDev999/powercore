@@ -29,7 +29,7 @@ public class RecipeCommand implements CommandExecutor {
             return true;
         }
 
-        String key = args[0];
+        String key = args[0].toLowerCase();
         if (recipeManager.isRecipeDefined(key)) {
             player.sendMessage(ChatColor.GREEN + "Recipe for " + key + ":");
             player.sendMessage(ChatColor.YELLOW + recipeManager.getRecipeShape(key));
